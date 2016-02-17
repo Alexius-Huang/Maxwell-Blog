@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+$primary-color: rgb(0,140,244);
+$primary-color-light: rgb(0,190,294);
+
+body {
+	margin: 0;
+
+	div.heading {
+		display: block;
+		font-family: Helvetica;
+		font-variant: small-caps;
+		color: $primary-color;
+		
+		h1 {
+			margin: 20px 50px;
+			padding: 5px;
+			text-align: center;
+		}
+
+		h1 span:hover {
+			color: $primary-color-light;
+		}
+	}
+}
