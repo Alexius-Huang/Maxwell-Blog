@@ -17,17 +17,30 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-$primary-color: rgb(0,140,244);
-$primary-color-light: rgb(0,190,294);
+$origin: 								rgb(0,140,244);
+$light: 								rgb(93,177,240);
+$dark:									rgb(0,90,194);
+
+$origin-alpha-light: 		rgba(0,140,244,0.5);
+$origin-alpha-strong: 	rgba(0,140,244,0.8);
+$light-alpha-light: 		rgba(93,177,240,0.5);
+$light-alpha-strong: 		rgba(93,177,240,0.8);
+$dark-alpha-light: 			rgba(0,90,194, 0.5);
+$dark-alpha-strong:			rgba(0,90,194,0.8);
+
+$tansparent: rgba(0,0,0,0);
 
 body {
+
 	margin: 0;
+	font-family: Helvetica;
+
+/* Heading */
 
 	div.heading {
 		display: block;
-		font-family: Helvetica;
+		color: $origin;
 		font-variant: small-caps;
-		color: $primary-color;
 		
 		h1 {
 			margin: 20px 50px;
@@ -36,7 +49,63 @@ body {
 		}
 
 		h1 span:hover {
-			color: $primary-color-light;
+			color: $light;
 		}
 	}
+
+/* Optional */
+
+	div.small-gap {
+		margin-bottom: 75px;
+	}
+
+/* Panel */
+
+	div.panel-heading, div.panel-body {
+		color: white;
+	}
+
+	div.panel-heading {
+		background-color: $origin-alpha-strong;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
+	div.panel-heading:hover {
+		background-color: $origin-alpha-light;
+	}
+
+	div.panel-body {
+		background-color: $light-alpha-strong;
+	}
+
+	div.panel-body:hover {
+		background-color: $light-alpha-light;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
