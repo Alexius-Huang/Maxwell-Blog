@@ -21,6 +21,8 @@ $origin: 								rgb(0,140,244);
 $light: 								rgb(93,177,240);
 $dark:									rgb(0,90,194);
 
+$ultra-light: 					rgb(179,219,249);
+
 $origin-alpha-light: 		rgba(0,140,244,0.5);
 $origin-alpha-strong: 	rgba(0,140,244,0.8);
 $light-alpha-light: 		rgba(93,177,240,0.5);
@@ -34,6 +36,27 @@ body {
 
 	margin: 0;
 	font-family: Helvetica;
+
+/* Navbar */
+
+	div.navbar-custom {
+		margin-bottom: 10px;
+		background-color: $origin;
+		padding: 8px;
+		color: white;
+
+		a.navbar-home {
+			color: $ultra-light;
+			font-size: 150%;
+			margin: 3px;
+			padding: 3px;
+		}
+
+		a.navbar-home:hover {
+			color: white;
+			text-decoration: none;
+		}
+	}
 
 /* Heading */
 
@@ -67,7 +90,7 @@ body {
 
 	div.panel-heading {
 		background-color: $origin-alpha-strong;
-		border-top-left-radius: 10px;
+		border-top-left-radius: 10px;.
 		border-top-right-radius: 10px;
 	}
 
