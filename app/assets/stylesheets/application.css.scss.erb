@@ -113,7 +113,7 @@ body {
 /* Optional */
 
 	div.small-gap {
-		margin-bottom: 75px;
+		margin-bottom: 25px;
 	}
 
 /* Panel */
@@ -140,6 +140,35 @@ body {
 
 	div.panel-body:hover {
 		background-color: $pure-ex-strong;
+	}
+
+	div.panel-scrolling-big {
+		min-height: 500px;
+  	max-height: 500px;
+  	overflow-y: scroll;
+	}
+
+	div.panel-scrolling-medium {
+		min-height: 350px;
+  	max-height: 350px;
+  	overflow-y: scroll;	
+	}
+
+	div.panel-scrolling-small {
+		min-height: 150px;
+  	max-height: 150px;
+  	overflow-y: scroll;	
+	}
+
+	div#comment-heading {
+		background-color: $dark-alpha-strong;
+		color: $pure;
+		padding: 8px;
+		padding-left: 18px;
+	}
+
+	div#comment-heading:hover {
+		background-color: $dark-alpha-light;
 	}
 
 

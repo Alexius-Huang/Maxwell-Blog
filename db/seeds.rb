@@ -2,7 +2,7 @@ RAILS_PROJECT = 'my_blog'
 puts "This is the seed file for Rails project called : #{RAILS_PROJECT}"
 puts "=" * 100
 puts "Processing seed file ..."
-print "Seed file generating 10 articles ... "
+print "Seed file generating 3 articles ... "
 
 article_title_sample = ["My First Article", "Test Article", "Awesome Markdown"]
 article_description_sample = [
@@ -46,13 +46,6 @@ Visit the 'redcarpet' gem on [github](https://github.com/vmg/redcarpet)!
 ]
 should_generate_three_articles = article_title_sample.zip(article_description_sample).each do |title, description|
 	Article.create(title: title, description: description)
-end
-
-should_generate_other_articles = (1..7).each do |number|
-	Article.create(title: "The #{number} Article", description: %Q{
-### The #{number} Article's description
-Hello, this is description
-		})
 end
 
 puts "Complete!"
