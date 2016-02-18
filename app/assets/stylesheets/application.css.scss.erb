@@ -1,0 +1,188 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+$ultra-light: 					rgb(179,219,249);
+$light: 								rgb(93,177,240);
+$origin: 								rgb(0,140,244);
+$medium:								rgb(14,110,182);
+$dark:									rgb(0,90,194);
+
+$pure:									rgb(255,255,255);
+$pure-light:						rgba(255,255,255,0.5);
+$pure-strong:						rgba(255,255,255,0.8);
+$pure-ex-strong: 				rgba(255,255,255,0.9);
+
+$light-alpha-light: 		rgba(93,177,240,0.5);
+$light-alpha-strong: 		rgba(93,177,240,0.8);
+$origin-alpha-light: 		rgba(0,140,244,0.5);
+$origin-alpha-strong: 	rgba(0,140,244,0.8);
+$medium-alpha-light: 		rgba(14,110,182,0.5);
+$medium-alpha-strong: 	rgba(14,110,182,0.8);
+$dark-alpha-light: 			rgba(0,90,194, 0.5);
+$dark-alpha-strong:			rgba(0,90,194,0.8);
+
+$transparent: rgba(0,0,0,0);
+
+body {
+	
+	background-image: url(<%= asset_path 'background.png' %>);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+	margin: 0;
+	font-family: Helvetica;
+
+/* Navbar */
+
+	div.navbar-custom {
+		margin-bottom: 10px;
+		background-color: $dark-alpha-light;
+		padding: 8px;
+		color: $pure;
+
+		a.navbar-home {
+			color: $pure-strong;
+			font-size: 150%;
+			margin: 3px;
+			padding: 3px;
+		}
+
+		a.navbar-home:hover {
+			color: $pure;
+			text-decoration: none;
+		}
+
+		ul {
+			margin: 5px;
+
+			li { 
+				margin: 0px 10px;
+				display: inline;
+				
+				a {
+					color: $pure-light;
+					font-size: 110%;
+				}
+
+				a:hover {
+					color: $pure;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	div.navbar-custom:hover {
+		background-color: $dark-alpha-strong;
+	}
+
+/* Heading */
+
+	div.heading {
+		display: block;
+		color: $dark-alpha-strong;
+		font-variant: small-caps;
+		
+		h1 {
+			margin: 20px 50px;
+			padding: 5px;
+			text-align: center;
+		}
+	}
+
+/* Optional */
+
+	div.small-gap {
+		margin-bottom: 75px;
+	}
+
+/* Panel */
+
+	div.panel {
+		background-color: $transparent;
+	}
+
+	div.panel-heading {
+		color: $pure;
+		background-color: $dark-alpha-light;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
+	div.panel-heading:hover {
+		background-color: $dark-alpha-strong;
+	}
+
+	div.panel-body {
+		color: $dark;
+		background-color: $pure-light;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+
+	div.panel-body:hover {
+		background-color: $pure-ex-strong;
+	}
+}
+
+/* Footer */
+
+	footer {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		margin: 40px;
+
+		a {
+		color: $pure;
+		}
+
+		a:hover {
+			color: $dark;
+			text-decoration: none;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
