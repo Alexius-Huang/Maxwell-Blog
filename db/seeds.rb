@@ -16,26 +16,28 @@ Visit me on [FaceBook](https://www.facebook.com/dragon.maximilian)},
 ### Test Article
 Here is the sample for *Ruby* code :
 
-		class Animal
-		  def make_noise
-		  end
+``` ruby
+class Animal
+	def make_noise
+	end
 
-		  def sleep
-			  "\#{self.Class} is sleeping"
-		  end
-		end
+	def sleep
+		"\#{self.Class} is sleeping"
+	end
+end
 
-		class Cat < Animal
-		  def make_noise
-		    "Meow ~"
-		  end
-		end
+class Cat < Animal
+	def make_noise
+	  "Meow ~"
+	end
+end
 
-		class Wolf < Animal
-		  def make_noise
-		    "Woof!"
-		  end
-		end
+class Wolf < Animal
+	def make_noise
+		"Woof!"
+	end
+end
+```
 
 },	
 	
