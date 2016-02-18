@@ -1,0 +1,4 @@
+<div class="panel-body">
+	<p><%= link_to article.title, article_path(article) %>, created at <%= article.created_at %></p>
+	<p><%= truncate(article.description, length: 50 %></p>
+</div>
