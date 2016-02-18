@@ -108,12 +108,22 @@ body {
 			padding: 5px;
 			text-align: center;
 		}
+
+		a.btn {
+			color: $dark-alpha-light;
+			background-color: $pure-light;
+		}
+
+		a.btn:hover {
+			color: $dark-alpha-strong;
+			background-color: $pure-strong;
+		}
 	}
 
 /* Optional */
 
 	div.small-gap {
-		margin-bottom: 75px;
+		margin-bottom: 25px;
 	}
 
 /* Panel */
@@ -136,14 +146,60 @@ body {
 	div.panel-body {
 		color: $dark;
 		background-color: $pure-light;
-		border-bottom-left-radius: 10px;
-		border-bottom-right-radius: 10px;
 	}
 
 	div.panel-body:hover {
 		background-color: $pure-ex-strong;
 	}
-}
+
+	div.panel-scrolling-big {
+		min-height: 500px;
+  	max-height: 500px;
+  	overflow-y: scroll;
+	}
+
+	div.panel-scrolling-medium {
+		min-height: 350px;
+  	max-height: 350px;
+  	overflow-y: scroll;	
+	}
+
+	div.panel-scrolling-small {
+		min-height: 150px;
+  	max-height: 150px;
+  	overflow-y: scroll;	
+	}
+
+	div.custom-format {
+		padding-top: 0;
+		padding-left: 20px;
+		
+		pre {
+			border: none;
+			background-color: $transparent;
+		}
+	}
+
+	div#parse-article {
+		a {
+			color: $medium-alpha-strong;
+		}
+		a:hover {
+			color: $light-alpha-strong;
+			text-decoration: none;
+		}
+	}
+
+	div#comment-heading {
+		background-color: $dark-alpha-light;
+		color: $pure;
+		padding: 8px;
+		padding-left: 18px;
+	}
+
+	div#comment-heading:hover {
+		background-color: $dark-alpha-strong;
+	}
 
 /* Footer */
 
@@ -163,7 +219,7 @@ body {
 		}
 	}
 
-
+}
 
 
 

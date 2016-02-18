@@ -1,0 +1,15 @@
+<div class="heading">
+	<%= link_to "Back", root_path, :class => "btn btn-custom btn-md pull-right" %>
+	<h1><span>Maxwell's Articles</span></h1>
+</div>
+
+<div class="small-gap"></div>
+
+<div class="col-md-offset-1 col-md-6" >
+	<div style="margin-left: 50px;">
+		<div class="panel-heading">Articles</div>
+		<div class="panel-scrolling-big" id="articles">
+			<%= render @articles %>
+		</div>
+	</div>
+</div>
