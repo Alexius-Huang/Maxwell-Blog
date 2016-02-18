@@ -56,12 +56,12 @@ body {
 
 	div.navbar-custom {
 		margin-bottom: 10px;
-		background-color: $medium;
+		background-color: $medium-alpha-light;
 		padding: 8px;
 		color: white;
 
 		a.navbar-home {
-			color: $ultra-light;
+			color: $pure-strong;
 			font-size: 150%;
 			margin: 3px;
 			padding: 3px;
@@ -70,6 +70,25 @@ body {
 		a.navbar-home:hover {
 			color: $pure;
 			text-decoration: none;
+		}
+
+		ul {
+			margin: 5px;
+
+			li { 
+				margin: 0px 10px;
+				display: inline;
+				
+				a {
+					color: $pure-light;
+					font-size: 110%;
+				}
+
+				a:hover {
+					color: $pure;
+					text-decoration: none;
+				}
+			}
 		}
 	}
 
@@ -81,17 +100,13 @@ body {
 
 	div.heading {
 		display: block;
-		color: $medium;
+		color: $medium-alpha-strong;
 		font-variant: small-caps;
 		
 		h1 {
 			margin: 20px 50px;
 			padding: 5px;
 			text-align: center;
-		}
-
-		h1 span:hover {
-			color: $light;
 		}
 	}
 
