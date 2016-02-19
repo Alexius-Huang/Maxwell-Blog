@@ -9,7 +9,7 @@
 <div class="col-md-offset-1 col-md-6" >
 	<div style="margin-left: 50px;">
 		<div class="panel-heading panel-top-offset"><%= @article.title %> <span class="pull-right">Created <%= time_ago_in_words(@article.created_at) %> ago.</</span></div>
-		<div class="panel-body panel-scrolling-big custom-format"><%= markdown(@article.description) %></div>
+		<div class="panel-body panel-scrolling-medium custom-format"><p><%= markdown(@article.description) %></p></div>
 		<div class="panel-body" id="comment-heading">Add a Comments?</div>
 		<div class="panel-body panel-scrolling-small" id="comments">Website Under Constuction</div>
 	</div>
