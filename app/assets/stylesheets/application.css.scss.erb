@@ -126,6 +126,11 @@ body {
 		margin-bottom: 25px;
 	}
 
+	a.non-active {
+		pointer-events: none;
+   	cursor: default;
+	}
+
 /* Panel */
 
 	div.panel {
@@ -147,6 +152,16 @@ body {
 		color: $dark;
 		background-color: $pure-light;
 		
+		a.custom {
+			color: $dark-alpha-light;
+			margin-left: 5px;
+		}
+
+		a.custom:hover {
+			color: $dark-alpha-strong;
+			text-decoration: none;
+		}
+
 		a.btn-index {
 			margin-top: 15px;
 			color: $pure;
@@ -185,6 +200,45 @@ body {
 		min-height: 150px;
   	max-height: 150px;
   	overflow-y: scroll;	
+	}
+
+	div.fb-logo {
+		img {
+			width: 30px;
+			height: 30px;
+			margin-right: 7px;
+			margin-left: 3px;
+		}
+	}
+
+	div.github-logo {
+		img {
+			width: 40px;
+			height: 30px;
+		}
+	}
+
+	div.gmail-logo {
+		img {
+			width: 35px;
+			height: 30px;
+			margin-left: 3px;
+			margin-right: 3px;
+		}
+	}
+	
+	div.yahoo-logo {
+		img {
+			width: 100px;
+			height: 20px;
+		}
+	}
+
+	div.LINE-logo {
+		img {
+			width: 40px;
+			height: 40px;
+		}
 	}
 
 	div.custom-format {
