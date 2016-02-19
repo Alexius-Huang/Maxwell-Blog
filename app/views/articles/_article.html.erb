@@ -1,4 +1,4 @@
 <div class="panel-body" id="parse-article">
-	<p><%= link_to article.title, article_path(article) %>, created <%= time_ago_in_words(article.created_at) %> ago.</p>
+	<p><%= link_to article.title, article_path(article) %>, created <%= time_ago(article) %> ago.</p>
 	<p><%= markdown(truncate(article.description, length: 50)) %></p>
 </div>
