@@ -39,6 +39,12 @@ $dark-alpha-strong:			rgba(0,90,194,0.8);
 
 $transparent: rgba(0,0,0,0);
 
+@mixin scrolling($height) {
+	min-height: $height;
+  max-height: $height;
+  overflow-y: scroll;
+}
+
 body {
 	
 	background-image: url(<%= asset_path 'background.png' %>);
@@ -188,35 +194,11 @@ body {
 		margin-top: 30px;
 	}
 
-	div.panel-scrolling-huge {
-		min-height: 550px;
-  	max-height: 550px;
-  	overflow-y: scroll;
-	}
-
-	div.panel-scrolling-big {
-		min-height: 400px;
-  	max-height: 400px;
-  	overflow-y: scroll;
-	}
-
-	div.panel-scrolling-medium {
-		min-height: 350px;
-  	max-height: 350px;
-  	overflow-y: scroll;	
-	}
-
-	div.panel-scrolling-origin {
-		min-height: 250px;
-  	max-height: 250px;
-  	overflow-y: scroll;	
-	}
-
-	div.panel-scrolling-small {
-		min-height: 150px;
-  	max-height: 150px;
-  	overflow-y: scroll;	
-	}
+	div.panel-scrolling-huge 		{ @include scrolling(550px); }
+	div.panel-scrolling-big 		{ @include scrolling(500px); }
+	div.panel-scrolling-medium 	{ @include scrolling(350px); }
+	div.panel-scrolling-origin 	{ @include scrolling(250px); }
+	div.panel-scrolling-small 	{ @include scrolling(150px); }
 
 	div.fb-logo {
 		img {

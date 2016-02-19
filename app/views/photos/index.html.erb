@@ -1,15 +1,14 @@
 <div class="heading">
 	<%= link_to "Back", root_path, :class => "btn btn-custom btn-md pull-right" %>
 	<%= link_to "New Photo or Artwork", new_photo_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
-	<h1><span>Maxwell's Photos &amp Artworks</span></h1>
 </div>
 
 <div class="small-gap"></div>
 
 <div class="col-md-offset-1 col-md-6" >
 	<div style="margin-left: 50px;">
-		<div class="panel-heading">Photos &amp Artworks</div>
-		<div class="panel-scrolling-big" id="articles">
+		<div class="panel-heading panel-top-offset">Photos &amp Artworks</div>
+		<div class="panel-scrolling-huge" id="photos">
 			<%= render @photos %>
 		</div>
 	</div>
