@@ -9,11 +9,7 @@
 	<div style="margin-left: 50px;">
 		<div class="panel-heading">Articles</div>
 		<div class="panel-scrolling-big" id="articles">
-			<% if @articles.any? %>
-				<%= render @articles %>
-			<% else %>
-				<p>There is currently no article.</p>
-			<% end %>
+			<%= render @articles %>
 		</div>
 	</div>
 </div>

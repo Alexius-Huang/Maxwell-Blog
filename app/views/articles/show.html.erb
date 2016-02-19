@@ -1,3 +1,5 @@
+<%= render 'articles/fb_comment_plugin' %>
+
 <div class="heading">
 	<%= link_to "Back", articles_path, :class => "btn btn-custom btn-md pull-right" %>
 	
@@ -11,6 +13,6 @@
 		<div class="panel-heading">Created <%= time_ago_in_words(@article.created_at) %> ago.</div>
 		<div class="panel-body panel-scrolling-medium custom-format"><%= markdown(@article.description) %></div>
 		<div class="panel-body" id="comment-heading">Add a Comments?</div>
-		<div class="panel-body panel-scrolling-small" id="comments">Here is where the comments goes</div>
+		<div class="panel-body panel-scrolling-small" id="comments"><div class="fb-comments" data-href="https://maxwell-blog.herokuapp.com" data-width="600px" data-numposts="5"></div></div>
 	</div>
 </div>
