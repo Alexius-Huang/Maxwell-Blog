@@ -1,0 +1,26 @@
+$light-alpha-light: 		rgba(93,177,240,0.5);
+$light-alpha-strong: 		rgba(93,177,240,0.8);
+$origin-alpha-light: 		rgba(0,140,244,0.5);
+$origin-alpha-strong: 	rgba(0,140,244,0.8);
+$medium-alpha-light: 		rgba(14,110,182,0.5);
+$medium-alpha-strong: 	rgba(14,110,182,0.8);
+$dark-alpha-light: 			rgba(0,90,194, 0.5);
+$dark-alpha-strong:			rgba(0,90,194,0.8);
+
+div#parse-photo {
+	img {
+		margin: 0 auto;
+		display: block;
+		max-width: 585px;
+		min-height: auto;
+	}
+
+	a {
+		color: $medium-alpha-strong;
+	}
+	
+	a:hover {
+		color: $light-alpha-strong;
+		text-decoration: none;
+	}
+}

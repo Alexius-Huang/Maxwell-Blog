@@ -39,6 +39,17 @@ $dark-alpha-strong:			rgba(0,90,194,0.8);
 
 $transparent: rgba(0,0,0,0);
 
+@mixin scrolling($height) {
+	min-height: $height;
+  max-height: $height;
+  overflow-y: scroll;
+}
+
+@mixin img-size($width,$height) {
+	width: $width;
+	height: $height;
+}
+
 body {
 	
 	background-image: url(<%= asset_path 'background.png' %>);
@@ -112,6 +123,8 @@ body {
 		a.btn {
 			color: $dark-alpha-light;
 			background-color: $pure-light;
+			margin-top: 10px;
+			margin-right: 10px;
 		}
 
 		a.btn:hover {
@@ -182,34 +195,19 @@ body {
 		background-color: $pure-ex-strong;
 	}
 
-	div.panel-scrolling-big {
-		min-height: 500px;
-  	max-height: 500px;
-  	overflow-y: scroll;
+	div.panel-top-offset {
+		margin-top: 30px;
 	}
 
-	div.panel-scrolling-medium {
-		min-height: 350px;
-  	max-height: 350px;
-  	overflow-y: scroll;	
-	}
-
-	div.panel-scrolling-origin {
-		min-height: 250px;
-  	max-height: 250px;
-  	overflow-y: scroll;	
-	}
-
-	div.panel-scrolling-small {
-		min-height: 150px;
-  	max-height: 150px;
-  	overflow-y: scroll;	
-	}
+	div.panel-scrolling-huge 		{ @include scrolling(550px); }
+	div.panel-scrolling-big 		{ @include scrolling(500px); }
+	div.panel-scrolling-medium 	{ @include scrolling(380px); }
+	div.panel-scrolling-origin 	{ @include scrolling(250px); }
+	div.panel-scrolling-small 	{ @include scrolling(150px); }
 
 	div.fb-logo {
 		img {
-			width: 30px;
-			height: 30px;
+			@include img-size(30px, 30px);
 			margin-right: 7px;
 			margin-left: 3px;
 		}
@@ -217,15 +215,13 @@ body {
 
 	div.github-logo {
 		img {
-			width: 40px;
-			height: 30px;
+			@include img-size(40px, 30px);
 		}
 	}
 
 	div.gmail-logo {
 		img {
-			width: 35px;
-			height: 30px;
+			@include img-size(35px, 30px);
 			margin-left: 3px;
 			margin-right: 3px;
 		}
@@ -233,15 +229,13 @@ body {
 	
 	div.yahoo-logo {
 		img {
-			width: 100px;
-			height: 20px;
+			@include img-size(100px, 20px);
 		}
 	}
 
 	div.LINE-logo {
 		img {
-			width: 40px;
-			height: 40px;
+			@include img-size(40px, 40px);
 		}
 	}
 
@@ -252,23 +246,6 @@ body {
 		pre {
 			border: none;
 			background-color: $transparent;
-		}
-	}
-
-	div#parse-article {
-		a {
-			color: $medium-alpha-strong;
-		}
-		a:hover {
-			color: $light-alpha-strong;
-			text-decoration: none;
-		}
-	}
-
-	div#parse-photo {
-		img {
-			margin: 18px 0px;
-			max-width: 585px;
 		}
 	}
 
@@ -302,25 +279,3 @@ body {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
