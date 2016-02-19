@@ -34,7 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass'
+gem 'simple_form'
 gem 'redcarpet'
+gem 'paperclip'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
