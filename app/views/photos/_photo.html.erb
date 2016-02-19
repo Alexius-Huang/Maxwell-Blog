@@ -2,6 +2,4 @@
 	<p><%= image_tag photo.image_file.url %></p>
 	<p><%= link_to photo.title, photo_path(photo) %>, created <%= time_ago(photo) %> ago.</p>
 	<p><%= markdown(truncate(photo.description, length: 50)) %></p>
-	<%= link_to "Edit", edit_photo_path(photo), :class => "btn btn-primary btn-xs pull-right" %>
-	<%= link_to "Delete", photo_path(photo), method: :delete, :class => "btn btn-danger btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
 </div>
