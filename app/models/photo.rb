@@ -1,4 +1,6 @@
 class Photo < ActiveRecord::Base
+	validates :title, :description, :image_file, presence: true
+
 	has_attached_file :image_file
   # Validate content type
   validates_attachment_content_type :image_file, content_type: /\Aimage/
