@@ -45,6 +45,11 @@ $transparent: rgba(0,0,0,0);
   overflow-y: scroll;
 }
 
+@mixin img-size($width,$height) {
+	width: $width;
+	height: $height;
+}
+
 body {
 	
 	background-image: url(<%= asset_path 'background.png' %>);
@@ -202,8 +207,7 @@ body {
 
 	div.fb-logo {
 		img {
-			width: 30px;
-			height: 30px;
+			@include img-size(30px, 30px);
 			margin-right: 7px;
 			margin-left: 3px;
 		}
@@ -211,15 +215,13 @@ body {
 
 	div.github-logo {
 		img {
-			width: 40px;
-			height: 30px;
+			@include img-size(40px, 30px);
 		}
 	}
 
 	div.gmail-logo {
 		img {
-			width: 35px;
-			height: 30px;
+			@include img-size(35px, 30px);
 			margin-left: 3px;
 			margin-right: 3px;
 		}
@@ -227,15 +229,13 @@ body {
 	
 	div.yahoo-logo {
 		img {
-			width: 100px;
-			height: 20px;
+			@include img-size(100px, 20px);
 		}
 	}
 
 	div.LINE-logo {
 		img {
-			width: 40px;
-			height: 40px;
+			@include img-size(40px, 40px);
 		}
 	}
 
