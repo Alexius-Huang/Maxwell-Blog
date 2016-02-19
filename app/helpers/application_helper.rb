@@ -19,4 +19,8 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def time_ago(content)
+  	time_ago_in_words(content.created_at)
+  end
 end
