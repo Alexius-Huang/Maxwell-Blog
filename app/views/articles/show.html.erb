@@ -11,7 +11,7 @@
 		<div class="panel-heading panel-top-offset"><%= @article.title %> <span class="pull-right">Created <%= time_ago(@article) %> ago.</</span></div>
 		<div class="panel-body panel-scrolling-medium custom-format"><p><%= markdown(@article.description) %></p>
 		<%= link_to edit_button("Article"), edit_article_path(@article), :class => "btn btn-xs pull-right btn-custom" %>
-		<%= link_to "Delete", article_path(@article), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
+		<%= link_to destroy_button("Article"), article_path(@article), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
 		</div>
 
 		<div class="panel-body" id="comment-heading">Add a Comments?</div>

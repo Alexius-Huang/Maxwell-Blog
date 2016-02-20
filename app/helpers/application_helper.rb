@@ -34,7 +34,11 @@ module ApplicationHelper
 
   def edit_button(content)
   	html_icon("text-background") + "Edit " + content
-  end 
+  end
+
+  def destroy_button(content)
+  	html_icon("remove-sign") + "Delete " + content
+  end
 
   private
 
