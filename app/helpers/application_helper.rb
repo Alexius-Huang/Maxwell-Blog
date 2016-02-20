@@ -23,4 +23,8 @@ module ApplicationHelper
   def time_ago(content)
   	time_ago_in_words(content.created_at)
   end
+
+  def back_button
+  	"<i class='glyphicon glyphicon-chevron-left'></i> ".html_safe + "Back"
+  end
 end
