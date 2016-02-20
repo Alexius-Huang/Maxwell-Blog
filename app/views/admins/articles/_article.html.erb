@@ -1,0 +1,6 @@
+<div class="panel-body" id="parse-article">
+	<p><%= html_icon("hand-right") %> <%= link_to article.title, article_path(article) %>, created <%= time_ago(article) %> ago.</p>
+	<p><%= markdown(truncate(article.description, length: 100)) %>
+	<%= link_to edit_button("Article"), edit_article_path(article), :class => "btn btn-xs pull-right btn-custom" %>
+	<%= link_to destroy_button("Article"), article_path(article), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+</div>
