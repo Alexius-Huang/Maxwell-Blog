@@ -1,5 +1,5 @@
 <% Article.order('created_at DESC').each.with_index do |article, index| %>
-	<% if index + 1 > 10 %>
+	<% if index + 1 > 5 %>
 		<% break %>
 	<% end %>
 
