@@ -12,11 +12,11 @@
       <ul class="nav nav-tabs nav-justified">
         <li role="presentation" class="active"><a href="#"><%= html_icon("user") %> Edit Author Account</a></li>
         <li role="presentation" class="inactive"><%= link_to html_icon("file") + " Articles", admins_manage_articles_path %></li>
-        <li role="presentation" class="inactive"><%= link_to "Photos & Artworks", admins_manage_photos_path %></li>
+        <li role="presentation" class="inactive"><%= link_to html_icon("picture") + "Photos & Artworks", admins_manage_photos_path %></li>
       </ul>  
     </div>
 
-    <div class="panel-body panel-scrolling-huge">
+    <div class="panel-body panel-scrolling-big">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
