@@ -24,24 +24,16 @@ module ApplicationHelper
   	time_ago_in_words(content.created_at)
   end
 
-  def back_button
-  	html_icon("chevron-left") + "Back"
-  end
-
-  def new_button(content)
-  	html_icon("plus") + "New " + content
-  end
-
-  def edit_button(content)
-  	html_icon("text-background") + "Edit " + content
-  end
-
-  def destroy_button(content)
-  	html_icon("remove-sign") + "Delete " + content
-  end
-
-  def view_button(content)
-  	html_icon("eye-open") + "View all " + content
+  [
+  	["back", 		"chevron-left",			"Back"			],
+  	["new",			"plus",							"New "			],
+  	["edit",		"text-background",	"Edit "			],
+  	["destroy", "remove-sign", 			"Delete "		],
+  	["view", 		"eye-open", 				"View all "	]
+  ].each do |method_title, icon_type, insert_string|
+  	define_method("#{method_title}_button") do |content|
+  		html_icon(icon_type) + insert_string + content
+  	end
   end
 
   def html_icon(icon_type)
