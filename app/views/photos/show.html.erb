@@ -6,7 +6,7 @@
 
 <div class="col-md-offset-1 col-md-6" >
 	<div style="margin-left: 50px;">
-		<div class="panel-heading panel-top-offset"><%= @photo.title %><div class="pull-right">Created <%= time_ago(@photo) %> ago.</div></div>
+		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @photo.title %><div class="pull-right">Created <%= time_ago(@photo) %> ago.</div></div>
 		<div class="panel-body panel-scrolling-medium custom-format" id="parse-photo">
 			<div class="small-gap"></div>
 			<%= image_tag @photo.image_file.url %><%= markdown(@photo.description) %>
@@ -14,7 +14,7 @@
 			<%= link_to destroy_button("Photo or Artwork"), photo_path(@photo), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
 		</div>
 
-		<div class="panel-body" id="comment-heading">Add a Comments?</div>
+		<div class="panel-body" id="comment-heading"><%= html_icon("comment") %> Add a Comments?</div>
 		<div class="panel-body panel-scrolling-small" id="comments">Website Under Constuction</div>
 	</div>
 </div>

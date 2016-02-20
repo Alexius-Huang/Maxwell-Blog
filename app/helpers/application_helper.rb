@@ -44,8 +44,6 @@ module ApplicationHelper
   	html_icon("eye-open") + "View all " + content
   end
 
-  private
-
   def html_icon(icon_type)
   	"<i class='glyphicon glyphicon-#{icon_type}'></i> ".html_safe
   end
