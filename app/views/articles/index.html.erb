@@ -1,6 +1,8 @@
 <div class="heading">
 	<%= link_to back_button(nil), root_path, :class => "btn btn-custom btn-md pull-right" %>
-	<%= link_to new_button("Article"), new_article_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
+	<% if admin_signed_in? %>
+		<%= link_to new_button("Article"), new_article_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
+	<% end %>
 </div>
 
 <div class="small-gap"></div>

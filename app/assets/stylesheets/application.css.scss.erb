@@ -107,6 +107,21 @@ body {
 		background-color: $dark-alpha-strong;
 	}
 
+/* Nav-tabs */
+
+	ul.nav-tabs {
+		li.inactive {
+			a {
+				color: $dark-alpha-light;
+			}
+
+			a:hover {
+				color: $dark-alpha-strong;
+				background-color: $pure-strong;
+			}
+		}
+	}
+
 /* Heading */
 
 	div.heading {
@@ -245,16 +260,6 @@ body {
 		}
 	}
 
-	div.custom-format {
-		padding-top: 0;
-		padding-left: 20px;
-		
-		pre {
-			border: none;
-			background-color: $transparent;
-		}
-	}
-
 	div#comment-heading {
 		background-color: $dark-alpha-light;
 		color: $pure;
@@ -265,6 +270,17 @@ body {
 	div#comment-heading:hover {
 		background-color: $dark-alpha-strong;
 	}
+
+	.article-custom {
+
+		padding-top: 0;
+		padding-left: 20px;
+		
+		pre {
+			border: none;
+			background-color: $transparent;
+		}
+	} 
 
 /* Footer */
 

@@ -55,6 +55,17 @@ should_generate_other_articles = (1..7).each do |number|
 end
 
 puts "Complete!"
+
+print "Seed file generating author admin account..."
+
+should_generate_author_admin_account = Admin.create(
+	email: "123@123.com",
+	password: "1234567890",
+	password_confirmation: "1234567890"
+)
+
+puts "Complete!"
+
 puts "Seed file process complete, enjoy!"
 
 
