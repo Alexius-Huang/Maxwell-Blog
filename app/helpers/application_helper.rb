@@ -27,4 +27,8 @@ module ApplicationHelper
   def back_button
   	"<i class='glyphicon glyphicon-chevron-left'></i> ".html_safe + "Back"
   end
+
+  def new_button(content)
+  	"<i class='glyphicon glyphicon-plus'></i> ".html_safe + "New " + content
+  end
 end
