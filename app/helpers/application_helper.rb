@@ -40,6 +40,10 @@ module ApplicationHelper
   	html_icon("remove-sign") + "Delete " + content
   end
 
+  def view_button(content)
+  	html_icon("eye-open") + "View all " + content
+  end
+
   private
 
   def html_icon(icon_type)
