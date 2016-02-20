@@ -25,10 +25,24 @@ module ApplicationHelper
   end
 
   def back_button
-  	"<i class='glyphicon glyphicon-chevron-left'></i> ".html_safe + "Back"
+  	html_icon("chevron-left") + "Back"
   end
 
   def new_button(content)
-  	"<i class='glyphicon glyphicon-plus'></i> ".html_safe + "New " + content
+  	html_icon("plus") + "New " + content
   end
+
+  def edit_button(content)
+  	html_icon("text-background") + "Edit " + content
+  end 
+
+  private
+
+  def html_icon(icon_type)
+  	"<i class='glyphicon glyphicon-#{icon_type}'></i> ".html_safe
+  end
+
 end
+
+
+
