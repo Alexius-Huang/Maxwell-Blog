@@ -23,4 +23,32 @@ module ApplicationHelper
   def time_ago(content)
   	time_ago_in_words(content.created_at)
   end
+
+  def back_button
+  	html_icon("chevron-left") + "Back"
+  end
+
+  def new_button(content)
+  	html_icon("plus") + "New " + content
+  end
+
+  def edit_button(content)
+  	html_icon("text-background") + "Edit " + content
+  end
+
+  def destroy_button(content)
+  	html_icon("remove-sign") + "Delete " + content
+  end
+
+  def view_button(content)
+  	html_icon("eye-open") + "View all " + content
+  end
+
+  def html_icon(icon_type)
+  	"<i class='glyphicon glyphicon-#{icon_type}'></i> ".html_safe
+  end
+
 end
+
+
+

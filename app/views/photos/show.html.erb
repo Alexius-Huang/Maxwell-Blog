@@ -1,20 +1,20 @@
 <div class="heading">
-	<%= link_to "Back", photos_path, :class => "btn btn-custom btn-md pull-right" %>
+	<%= link_to back_button, photos_path, :class => "btn btn-custom btn-md pull-right" %>
 </div>
 
 <div class="small-gap"></div>
 
 <div class="col-md-offset-1 col-md-6" >
 	<div style="margin-left: 50px;">
-		<div class="panel-heading panel-top-offset"><%= @photo.title %><div class="pull-right">Created <%= time_ago(@photo) %> ago.</div></div>
+		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @photo.title %><div class="pull-right">Created <%= time_ago(@photo) %> ago.</div></div>
 		<div class="panel-body panel-scrolling-medium custom-format" id="parse-photo">
 			<div class="small-gap"></div>
 			<%= image_tag @photo.image_file.url %><%= markdown(@photo.description) %>
-			<%= link_to "Edit", edit_photo_path(@photo), :class => "btn btn-xs pull-right btn-custom" %>
-			<%= link_to "Delete", photo_path(@photo), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
+			<%= link_to edit_button("Photo or Artwork") ,edit_photo_path(@photo), :class => "btn btn-xs pull-right btn-custom" %>
+			<%= link_to destroy_button("Photo or Artwork"), photo_path(@photo), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
 		</div>
 
-		<div class="panel-body" id="comment-heading">Add a Comments?</div>
+		<div class="panel-body" id="comment-heading"><%= html_icon("comment") %> Add a Comments?</div>
 		<div class="panel-body panel-scrolling-small" id="comments">Website Under Constuction</div>
 	</div>
 </div>
