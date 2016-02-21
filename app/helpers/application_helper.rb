@@ -17,6 +17,10 @@ module ApplicationHelper
     renderer = Redcarpet::Render::HTML.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
 
+    if text == nil
+    	text = ""
+    end
+    
     markdown.render(text).html_safe
   end
 

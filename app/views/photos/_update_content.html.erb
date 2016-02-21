@@ -8,7 +8,7 @@
 			<span class="glyphicon glyphicon-bookmark"></span> <%= link_to photo.title, photo_path(photo), :class => "custom" %> <br>
 			created at <%= photo.created_at.to_s(:long) %>
 		</p>
-		<%= image_tag photo.image_file.url, :style => "max-width: 270px; margin: 0 auto; display: block" %>
+		<%= image_tag photo.url, :style => "max-width: 270px; margin: 0 auto; display: block" %>
 	</div>
 <% end %>
 <%= link_to view_button("Photos & Artworks"), photos_path, :class => "btn pull-right btn-index" %>

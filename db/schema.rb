@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221064427) do
+ActiveRecord::Schema.define(version: 20160221145329) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,12 +26,9 @@ ActiveRecord::Schema.define(version: 20160221064427) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "name"
     t.text     "about"
+    t.string   "url"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
@@ -47,12 +44,9 @@ ActiveRecord::Schema.define(version: 20160221064427) do
   create_table "photos", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image_file_file_name"
-    t.string   "image_file_content_type"
-    t.integer  "image_file_file_size"
-    t.datetime "image_file_updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "url"
   end
 
 end
