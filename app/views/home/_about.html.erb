@@ -1,0 +1,3 @@
+<%= image_tag author.avatar.url, :style => "max-width: 295px; margin: 0 auto" %>
+<p style="margin-top: 10px;"><%= truncate(markdown(author.about), length: 150) %></p>
+<%= link_to html_icon("sunglasses") + "Read More", "#", :class => "btn btn-index pull-right" %>

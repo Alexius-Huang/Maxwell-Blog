@@ -21,7 +21,10 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
+          <%= f.input :name, required: true, autofocus: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
+          <%= f.input :about, required: true, hint: "Able to use markdown in this field.", input_html: { :class => "form-control", :style => "background-color: transparent", rows: 10 } %>
+          <%= f.input :email, required: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
+          <%= f.input :avatar, as: :file, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
