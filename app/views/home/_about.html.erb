@@ -1,2 +1,4 @@
-<%= image_tag author.avatar.url, :style => "max-width: 295px; margin: 0 auto" %>
+<% unless author.url.nil? %>
+	<%= image_tag author.avatar.url, :style => "max-width: 295px; margin: 0 auto" %>
+<% end %>
 <p style="margin-top: 10px;"><%= truncate(markdown(author.about), length: 150) %></p>
