@@ -9,7 +9,7 @@
 		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @photo.title %><div class="pull-right">Created <%= time_ago(@photo) %> ago.</div></div>
 		<div class="panel-body panel-scrolling-medium custom-format" id="parse-photo">
 			<div class="small-gap"></div>
-			<%= image_tag @photo.image_file.url %>
+			<%= image_tag @photo.url %>
 				<p><%= markdown(@photo.description) %></p>
 			</%>
 			<% if admin_signed_in? %>
