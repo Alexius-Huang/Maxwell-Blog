@@ -22,7 +22,7 @@
 
         <div class="form-inputs">
           <%= f.input :name, required: true, autofocus: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
-          <%= f.input :about, required: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
+          <%= f.input :about, required: true, hint: "Able to use markdown in this field.", input_html: { :class => "form-control", :style => "background-color: transparent", rows: 10 } %>
           <%= f.input :email, required: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
           <%= f.input :avatar, as: :file, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
 
