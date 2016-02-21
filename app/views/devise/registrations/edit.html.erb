@@ -21,7 +21,9 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
+          <%= f.input :name, required: true, autofocus: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
+          <%= f.input :about, required: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
+          <%= f.input :email, required: true, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
           <%= f.input :avatar, as: :file, input_html: { :class => "form-control", :style => "background-color: transparent" } %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
