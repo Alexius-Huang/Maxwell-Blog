@@ -9,10 +9,11 @@
     <div class="panel-heading panel-top-offset"><%= html_icon("lock") %> Edit Author Profile</div>
     
     <div class="panel-body" style="background-color: rgba(255,255,255,0.5);">
-      <ul class="nav nav-tabs nav-justified">
-        <li role="presentation" class="active"><a href="#"><%= html_icon("user") %> Edit Author Account</a></li>
+      <ul class="nav nav-tabs nav-justified" style="font-size: 85%">
+        <li role="presentation" class="active"><a href="#"><%= html_icon("user") %> Author Account</a></li>
         <li role="presentation" class="inactive"><%= link_to html_icon("file") + " Articles", admins_manage_articles_path %></li>
         <li role="presentation" class="inactive"><%= link_to html_icon("picture") + "Photos & Artworks", admins_manage_photos_path %></li>
+        <li role="presentation" class="inactive"><%= link_to html_icon("console") + "Computer Science", "#" %></li>
       </ul>  
     </div>
 
