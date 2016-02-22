@@ -8,11 +8,12 @@
   <div style="margin-left: 50px;">
     <div class="panel-heading panel-top-offset"><%= html_icon("lock") %> Edit Author Profile</div>
     
-    <div class="panel-body" style="background-color: rgba(255,255,255,0.5);">
+    <div class="panel-body" style="background-color: rgba(255,255,255,0.5); font-size: 85%">
       <ul class="nav nav-tabs nav-justified">
-        <li role="presentation" class="inactive"><%= link_to html_icon("user") + "Edit Author Account", edit_admin_registration_path %></li>
+        <li role="presentation" class="inactive"><%= link_to html_icon("user") + "Author Account", edit_admin_registration_path %></li>
         <li role="presentation" class="active"><a href="#"><%= html_icon("file") %> Articles</a></li>
         <li role="presentation" class="inactive"><%= link_to html_icon("picture") + "Photos & Artworks", admins_manage_photos_path %></li>
+        <li role="presentation" class="inactive"><%= link_to html_icon("console") + "Computer Science", "#" %></li>
       </ul>  
     </div>
 

@@ -9,30 +9,37 @@
 	<div class="col-md-3" style="margin-left: 170px;">
 		<div class="panel">
 			<div class="panel-heading"><%= html_icon("knight") %> About Me</div>
-			<div class="panel-body panel-scrolling-big"><%= render 'home/about', author: Admin.first %></div>
+			<div class="panel-body panel-scrolling-about"><%= render 'home/about', author: Admin.first %></div>
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="col-md-3">
 			<div class="panel">
-				<div class="panel-heading"><%= html_icon("file") %> Articles Update</div>
+				<div class="panel-heading"><%= html_icon("apple") %> Life Experience </div>
 				<div class="panel-body panel-scrolling-origin"><%= render 'articles/update_content' %></div>
 			</div>
 		</div>
 
 		<div class="col-md-3">
 			<div class="panel">
-				<div class="panel-heading"><%= html_icon("picture") %> Photos &amp Artworks Update </div>
+				<div class="panel-heading"><%= html_icon("picture") %> Photos &amp Artworks </div>
 				<div class="panel-body panel-scrolling-origin"><%= render 'photos/update_content' %></div>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-6" style="max-width: 735px">
+			<div class="col-md-3" style="max-width: 368px">
+				<div class="panel">
+					<div class="panel-heading"><%= html_icon("console") %> Computer Science </div>
+					<div class="panel-body panel-scrolling-origin"> Website Under Construction </div>
+				</div>
+			</div>
+
+			<div class="col-md-3" style="max-width: 368px">
 				<div class="panel">
 					<div class="panel-heading"><%= html_icon("envelope") %> Contact Me?</div>
-					<div class="panel-body panel-scrolling-small" style="min-height: 187px"><%= render 'home/contact' %></div>
+					<div class="panel-body panel-scrolling-origin" style="min-height: 187px"><%= render 'home/contact' %></div>
 				</div>
 			</div>
 		</div>
