@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def time_ago(content)
-  	time_ago_in_words(content.created_at)
+  	time_ago_in_words(content.updated_at)
   end
 
   [
