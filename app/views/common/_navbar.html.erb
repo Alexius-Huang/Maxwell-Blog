@@ -6,8 +6,9 @@
 		
 		<div class="navbar-right">
 			<ul>
-				<li><%= html_icon("pencil") %> <%= link_to " Articles", articles_path %></li>
+				<li><%= html_icon("apple") %> <%= link_to " Life Experience", articles_path %></li>
 				<li><%= html_icon("tag") %> <%= link_to " Photos & Artworks", photos_path %></li>
+				<li><%= html_icon("console") %> <%= link_to " Computer Science ( Under Construction...)", "#" %></li>
 				<% if admin_signed_in? %>
 					<li><%= html_icon("user") %> <%= link_to "Hello! #{Admin.first.name}!", edit_admin_registration_path %></li>
 					<li><%= html_icon("log-out") %> <%= link_to "Sign Out?", destroy_admin_session_path, method: :delete %></li>
