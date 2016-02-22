@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'categories/title:string'
+
   devise_for :admins
   root 'home#index'
 
