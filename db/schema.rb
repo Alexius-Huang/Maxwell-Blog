@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221145329) do
+ActiveRecord::Schema.define(version: 20160223120711) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,28 @@ ActiveRecord::Schema.define(version: 20160221145329) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "classification_id"
+  end
+
+  create_table "classifications", force: :cascade do |t|
+    t.string   "caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "coding_articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "coding_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "codings", force: :cascade do |t|
+    t.string   "category"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -44,9 +66,24 @@ ActiveRecord::Schema.define(version: 20160221145329) do
   create_table "photos", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "url"
+    t.integer  "classification_id"
+  end
+
+  create_table "rails_discussions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "url"
+  end
+
+  create_table "ruby_discussions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

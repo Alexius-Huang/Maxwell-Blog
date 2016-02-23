@@ -1,0 +1,2 @@
+class RubyDiscussionsController < ApplicationController
+end
