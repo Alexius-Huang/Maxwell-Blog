@@ -1,0 +1,28 @@
+@mixin img-size($width,$height) {
+	width: $width;
+	height: $height;
+}
+
+	div#ruby-icon {
+		img {
+			@include img-size(30px, 30px);
+		}
+	}
+
+	div#rails-icon {
+		img {
+			@include img-size(30px, 30px);
+		}
+	}
+
+	div#gem-icon {
+		img {
+			@include img-size(30px, 30px);
+		}
+	}
+
+	div#programming-icon {
+		img {
+			@include img-size(30px, 30px);
+		}
+	}
