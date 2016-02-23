@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   	resources "#{lang}_discussions".to_sym
   end
 
+  get 'computer_science', to: 'home#computer_science'
+
 end
