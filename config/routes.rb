@@ -10,10 +10,10 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :photos
-
-  ["ruby", "rails"].each do |lang|
-  	resources "#{lang}_discussions".to_sym
-  end
+  resources :ruby_discussions
+  resources :rails_discussions
+  resources :ruby_gems
+  resources :programming_basics
 
   get 'computer_science', to: 'home#computer_science'
 

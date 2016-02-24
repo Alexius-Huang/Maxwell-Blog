@@ -3,7 +3,9 @@ class HomeController < ApplicationController
   end
 
   def computer_science
-  	@ruby_discussions = RubyDiscussion.order("updated_at DESC")
-  	@rails_discussions = RailsDiscussion.order("updated_at DESC")
+  	@programming_article = ProgrammingBasic.last
+  	@ruby_article = RubyDiscussion.last
+  	@rails_article = RailsDiscussion.last
+  	@ruby_gem_article = RubyGem.last
   end
 end

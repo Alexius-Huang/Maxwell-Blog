@@ -1,0 +1,8 @@
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+<div class="panel-body article-custom" id="parse-article">
+	<p style="margin-top: 10px;"><%= html_icon("hand-right") %> <%= link_to ruby_gem.title, ruby_gem_path(ruby_gem) %>, updated <%= time_ago(ruby_gem) %> ago.</p>
+	<p><%= markdown(truncate(ruby_gem.description, length: 100)) %>
+	<%= link_to edit_button("Ruby Discussion"), edit_ruby_gem_path(ruby_gem), :class => "btn btn-xs pull-right btn-custom" %>
+	<%= link_to destroy_button("Ruby Discussion"), ruby_gem_path(ruby_gem), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+</div>
