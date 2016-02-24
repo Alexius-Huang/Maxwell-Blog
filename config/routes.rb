@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :photos
   resources :ruby_discussions
-  resources :rails_discusssions
+  resources :rails_discussions
   resources :ruby_gems
   resources :programming_basics
 

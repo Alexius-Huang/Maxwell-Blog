@@ -1,0 +1,22 @@
+<div class="heading">
+	<%= link_to back_button(nil), ruby_gems_path, :class => "btn btn-custom btn-md pull-right" %>
+</div>
+
+<div class="small-gap"></div>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+<div class="col-md-offset-1 col-md-6" >
+	<div style="margin-left: 50px;">
+		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @discussion.title %> <span class="pull-right">Created <%= time_ago(@discussion) %> ago.</</span></div>
+		<div class="panel-body panel-scrolling-medium article-custom"><p><%= markdown(@discussion.description) %></p>
+		<% if admin_signed_in? %>
+			<%= link_to edit_button("Ruby Discussion"), edit_ruby_gem_path(@discussion), :class => "btn btn-xs pull-right btn-custom" %>
+			<%= link_to destroy_button("Ruby Discussion"), ruby_gem_path(@discussion), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
+		<% end %>
+		</div>
+
+		<div class="panel-body" id="comment-heading"><%= html_icon("comment") %> Add a Comments?</div>
+		<div class="panel-body panel-scrolling-small" id="comments">Website Under Constuction</div>
+	</div>
+</div>
