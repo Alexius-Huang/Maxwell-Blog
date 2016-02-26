@@ -1,0 +1,10 @@
+<div id="comments">
+	<% @comments.each do |comment| %>
+	 	<div class="panel-body">
+	 		<p><b><%= comment.name %></b> says :</p>
+	 		<p><%= simple_format comment.content %></p>
+	 	</div>
+	<% end %>
+</div>
+
+<%= link_to "New Comment", "#", :class => "btn btn-md btn-custom", :style => "margin: 10px 0px" %>
