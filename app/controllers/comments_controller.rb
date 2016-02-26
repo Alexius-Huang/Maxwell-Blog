@@ -1,19 +1,11 @@
 class CommentsController < ApplicationController
   before_action :load_commentable
 
-  def index
-  	@comments = @commentable.comments
-  end
-
-  def new
-  	@comment = @commentable.comments.new
-  end
-
   def create
   	@comment = @commentable.comments.create(comment_params)
 
   	if @comment.save
-  		redirect_to [@commentable, :comments]
+  		redirect_to @commentable
   	else
   		render :new
   	end
