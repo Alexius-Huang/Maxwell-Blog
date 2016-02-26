@@ -20,6 +20,9 @@ class ProgrammingBasicsController < ApplicationController
 
 	def show
 		@discussion = ProgrammingBasic.find(params[:id])
+    @commentable = @discussion
+    @comments = @commentable.comments
+    @comment = Comment.new
 	end
 
 	def edit

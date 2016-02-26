@@ -20,6 +20,9 @@ class RailsDiscussionsController < ApplicationController
 
 	def show
 		@discussion = RailsDiscussion.find(params[:id])
+	  @commentable = @discussion
+    @comments = @commentable.comments
+    @comment = Comment.new
 	end
 
 	def edit

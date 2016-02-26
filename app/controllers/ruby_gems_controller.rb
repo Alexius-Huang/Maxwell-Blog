@@ -20,6 +20,9 @@ class RubyGemsController < ApplicationController
 
 	def show
 		@discussion = RubyGem.find(params[:id])
+		@commentable = @discussion
+    @comments = @commentable.comments
+    @comment = Comment.new
 	end
 
 	def edit
