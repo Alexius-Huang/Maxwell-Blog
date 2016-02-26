@@ -10,7 +10,7 @@
 		<div class="panel-body panel-scrolling-medium custom-format" id="parse-photo">
 			<div class="small-gap"></div>
 			<%= image_tag @photo.url %>
-				<p><%= markdown(@photo.description) %></p>
+				<p class="markdown"><%= markdown(@photo.description) %></p>
 			</%>
 			<% if admin_signed_in? %>
 				<%= link_to edit_button("Photo or Artwork") ,edit_photo_path(@photo), :class => "btn btn-xs pull-right btn-custom" %>

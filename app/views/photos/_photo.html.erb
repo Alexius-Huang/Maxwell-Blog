@@ -1,6 +1,6 @@
 <div class="panel-body" id="parse-photo">
 	<p><%= image_tag photo.url %></p>
 	<p><%= html_icon("paperclip") %> <%= link_to photo.title, photo_path(photo) %>, updated <%= time_ago(photo) %> ago.</p>
-	<p><%= markdown(truncate(photo.description, length: 100)) %>
+	<p class="markdown"><%= markdown(truncate(photo.description, length: 100)) %>
 	<%= link_to "Read more", photo_path(photo) %></p>
 </div>

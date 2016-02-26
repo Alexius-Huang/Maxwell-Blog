@@ -9,7 +9,7 @@
 <div class="col-md-offset-1 col-md-6" >
 	<div style="margin-left: 50px;">
 		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @discussion.title %> <span class="pull-right">Created <%= time_ago(@discussion) %> ago.</</span></div>
-		<div class="panel-body panel-scrolling-medium article-custom"><p><%= markdown(@discussion.description) %></p>
+		<div class="panel-body panel-scrolling-medium article-custom"><p class="markdown"><%= markdown(@discussion.description) %></p>
 		<% if admin_signed_in? %>
 			<%= link_to edit_button("Ruby Discussion"), edit_ruby_discussion_path(@discussion), :class => "btn btn-xs pull-right btn-custom" %>
 			<%= link_to destroy_button("Ruby Discussion"), ruby_discussion_path(@discussion), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>

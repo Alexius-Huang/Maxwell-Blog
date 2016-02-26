@@ -2,7 +2,7 @@
 
 <div class="panel-body article-custom" id="parse-article">
 	<p style="margin-top: 10px;"><%= html_icon("hand-right") %> <%= link_to ruby_discussion.title, ruby_discussion_path(ruby_discussion) %>, updated <%= time_ago(ruby_discussion) %> ago.</p>
-	<p><%= markdown(truncate(ruby_discussion.description, length: 100)) %>
+	<p class="markdown"><%= markdown(truncate(ruby_discussion.description, length: 100)) %>
 	<%= link_to edit_button("Ruby Discussion"), edit_ruby_discussion_path(ruby_discussion), :class => "btn btn-xs pull-right btn-custom" %>
 	<%= link_to destroy_button("Ruby Discussion"), ruby_discussion_path(ruby_discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 </div>

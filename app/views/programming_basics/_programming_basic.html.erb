@@ -2,7 +2,7 @@
 
 <div class="panel-body article-custom" id="parse-article">
 	<p style="margin-top: 10px;"><%= html_icon("hand-right") %> <%= link_to programming_basic.title, programming_basic_path(programming_basic) %>, updated <%= time_ago(programming_basic) %> ago.</p>
-	<p><%= markdown(truncate(programming_basic.description, length: 100)) %>
+	<p class="markdown"><%= markdown(truncate(programming_basic.description, length: 100)) %>
 	<%= link_to edit_button("Programming Basic"), edit_programming_basic_path(programming_basic), :class => "btn btn-xs pull-right btn-custom" %>
 	<%= link_to destroy_button("Programming Basic"), programming_basic_path(programming_basic), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 </div>
