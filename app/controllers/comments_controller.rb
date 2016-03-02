@@ -4,11 +4,10 @@ class CommentsController < ApplicationController
   def create
   	@comment = @commentable.comments.create(comment_params)
 
-  	if @comment.save
-  		redirect_to @commentable
-  	else
-  		render :new
-  	end
+    respond_to do |format|
+      format.html { redirect_to @commentable }
+      format.js
+    end
   end
 
   private 

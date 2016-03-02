@@ -1,0 +1,18 @@
+<div class="panel-body" id="comment-heading"><a href="#" id="comment-link"><%= html_icon("comment") %> Add a Comments?</a></div>
+
+<div class="panel-body" id="comment-section">
+		
+		<div id="comments">
+			<%= render @comments %>
+			<div id="comment-append"></div>
+		</div>
+
+		<%= simple_form_for [@commentable, @comment], remote: true do |f| %>
+			<div class="form-group">
+				<%= f.input :name, input_html: { :class => "comment-form-control" }, :style => "background-color: transparent" %>
+				<%= f.input :content, input_html: { :class => "comment-form-control" }, :style => "background-color: transparent" %>
+			</div>
+			<%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+		<% end %>
+
+</div>

@@ -7,7 +7,7 @@
 <div class="col-md-offset-1 col-md-6" >
 	<div style="margin-left: 50px;">
 		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @photo.title %><div class="pull-right">Created <%= time_ago(@photo) %> ago.</div></div>
-		<div class="panel-body panel-scrolling-medium custom-format" id="parse-photo">
+		<div class="panel-body custom-format" id="parse-photo">
 			<div class="small-gap"></div>
 			<%= image_tag @photo.url %>
 				<p class="markdown"><%= markdown(@photo.description) %></p>
@@ -18,12 +18,7 @@
 			<% end %>
 		</div>
 
-		<div class="panel-body" id="comment-heading"><%= html_icon("comment") %> Add a Comments?</div>
-		<div class="panel-body panel-scrolling-small" id="comments">
-			<div class="panel-body panel-scrolling-small" id="comments">
-				<%= render 'comments/lists' %>
-				<%= render 'comments/form' %>
-			</div>
-		</div>
+		<%= render 'comments/section' %>
+
 	</div>
 </div>
