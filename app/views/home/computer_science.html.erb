@@ -5,29 +5,35 @@
 <div style="margin-bottom: 10px"></div>
 
 <div class="row" style="margin-left: 40px">
-	<div class="col-md-offset-1 col-md-3">
+
+	<div class="col-md-offset-1 col-md-6">
 		<div class="panel-heading panel-top-offset" id="programming-icon"><%= image_tag("programming-icon.png") %> Programming Basics</div>
-		<div class="panel-body panel-scrolling-origin"><%= markdown(%Q{
+		<div class="panel-body"><%= markdown(%Q{
 ### Coding Beginners, Hello!
 Welcome to explore the world of the **computer science**! Learning programming is fun and coding is also a good way to solve many problems. The author may think that it is important to let people know the joy and the charm of programming.
 
 This section will introduce **the fundamentals of programming** and several concept about programming. }) %><br> <%= link_to view_button("Programming Basics"), programming_basics_path, :class => "btn pull-right btn-index" %></div>
 	</div>
+</div>
 
-	<div class="col-md-3">
+<div class="row" style="margin-left: 40px">
+
+	<div class="col-md-offset-1 col-md-6">
 		<div class="panel-heading panel-top-offset" id="ruby-icon"><%= image_tag("ruby-icon.png") %> Ruby Language</div>
-		<div class="panel-body panel-scrolling-origin"><%= markdown(%Q{
+		<div class="panel-body"><%= markdown(%Q{
 ### Interested in **Ruby**?
 **[Ruby](https://www.ruby-lang.org/en/)** is created by **Yukihiro Matsumoto** in about year 1995. According to its creator, Ruby was influenced by **Perl**, **Smalltalk**, **Eiffel**, **Ada**, and **Lisp**. It supports multiple programming paradigms, including functional, object-oriented, and imperative. It also has a dynamic type system and automatic memory management.
 
 The author of this blog will share and record the experience in Ruby Language programming in this section. }) %><br> <%= link_to view_button("Ruby Programming"), ruby_discussions_path, :class => "btn pull-right btn-index" %></div>
 	</div>
+
 </div>
 
 <div class="row" style="margin-left: 40px">
-	<div class="col-md-offset-1 col-md-3">
+	
+	<div class="col-md-offset-1 col-md-6">
 		<div class="panel-heading panel-top-offset" id="rails-icon"><%= image_tag("rails-icon.png") %> Ruby on Rails</div>
-		<div class="panel-body panel-scrolling-origin"><%= markdown(%Q{
+		<div class="panel-body"><%= markdown(%Q{
 ### Welcome Abroad! 
 #### **You are riding [Ruby on Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails)!**
 
@@ -40,9 +46,13 @@ In addition to MVC, Rails emphasizes the use of other well-known software engine
 This section will basically share some knowlegde and the authors experience on coding with Ruby on Rails }) %><br> <%= link_to view_button("Rails Discussion"), rails_discussions_path, :class => "btn pull-right btn-index" %></div>
 	</div>
 
-	<div class="col-md-3">
+</div>
+
+<div class="row" style="margin-left: 40px">
+
+	<div class="col-md-offset-1 col-md-6">
 		<div class="panel-heading panel-top-offset" id="gem-icon"><%= image_tag("gem-icon.ico") %> Useful Ruby Gems</div>
-		<div class="panel-body panel-scrolling-origin"><%= markdown(%Q{
+		<div class="panel-body"><%= markdown(%Q{
 ### Advance Ruby with **Gems**
 
 **[RubyGems](https://en.wikipedia.org/wiki/RubyGems)** are the **packages** or **libraries** of the Ruby Language, there are so many interesting Ruby Gems to explore. Gems are good helpers that can assist you in Ruby programming.
@@ -50,4 +60,5 @@ This section will basically share some knowlegde and the authors experience on c
 Even in Rails, there are useful Gems that will also be introduced in this section.
 }) %><br> <%= link_to view_button("Ruby Gems"), ruby_gems_path, :class => "btn pull-right btn-index" %></div>
 	</div>
+
 </div>
