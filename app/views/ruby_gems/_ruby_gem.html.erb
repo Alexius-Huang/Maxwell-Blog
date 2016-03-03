@@ -5,6 +5,8 @@
 	<div class="markdown">
 		<p><%= markdown(truncate(ruby_gem.description, length: 500)) %></p>
 	</div>
-	<%= link_to edit_button("Ruby Gem Discussion"), edit_ruby_gem_path(ruby_gem), :class => "btn btn-xs pull-right btn-custom" %>
-	<%= link_to destroy_button("Ruby Gem Discussion"), ruby_gem_path(ruby_gem), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+	<% if admin_signed_in? %>
+		<%= link_to edit_button("Ruby Gem Discussion"), edit_ruby_gem_path(ruby_gem), :class => "btn btn-xs pull-right btn-custom" %>
+		<%= link_to destroy_button("Ruby Gem Discussion"), ruby_gem_path(ruby_gem), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+	<% end %>
 </div>

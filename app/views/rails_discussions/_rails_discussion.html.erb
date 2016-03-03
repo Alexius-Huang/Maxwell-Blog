@@ -5,6 +5,8 @@
 	<div class="markdown">
 		<p class="markdown"><%= markdown(truncate(rails_discussion.description, length: 500)) %></p>	
 	</div>
-	<%= link_to edit_button("Rails Discussion"), edit_rails_discussion_path(rails_discussion), :class => "btn btn-xs pull-right btn-custom" %>
-	<%= link_to destroy_button("Rails Discussion"), rails_discussion_path(rails_discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+	<% if admin_signed_in? %>
+		<%= link_to edit_button("Rails Discussion"), edit_rails_discussion_path(rails_discussion), :class => "btn btn-xs pull-right btn-custom" %>
+		<%= link_to destroy_button("Rails Discussion"), rails_discussion_path(rails_discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+	<% end %>
 </div>
