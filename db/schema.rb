@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226021052) do
+ActiveRecord::Schema.define(version: 20160308160426) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -109,6 +109,13 @@ ActiveRecord::Schema.define(version: 20160226021052) do
   end
 
   create_table "programming_basics", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "programming_experiences", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false

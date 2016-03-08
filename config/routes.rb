@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get 'admins/manage_photos'   , to: 'admins/registrations#manage_photos'
   end
 
-  ["articles", "photos", "ruby_discussions", "rails_discussions", "ruby_gems", "programming_basics"].each do |routes|
+  ["articles", "photos", "ruby_discussions", "rails_discussions", "ruby_gems", "programming_basics", "programming_experiences"].each do |routes|
   	resources routes.to_sym do
   		resources :comments
   	end
