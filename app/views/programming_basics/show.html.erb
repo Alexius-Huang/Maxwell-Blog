@@ -7,16 +7,19 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 <div class="col-md-offset-1 col-md-6" >
-	<div style="margin-left: 50px;">
-		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @discussion.title %> <span class="pull-right">Created <%= time_ago(@discussion) %> ago.</</span></div>
-		<div class="panel-body article-custom"><p class="markdown"><%= markdown(@discussion.description) %></p>
-		<% if admin_signed_in? %>
-			<%= link_to edit_button("Programming Basic"), edit_programming_basic_path(@discussion), :class => "btn btn-xs pull-right btn-custom" %>
-			<%= link_to destroy_button("programming Basic"), programming_basic_path(@discussion), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
-		<% end %>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-11">
+
+				<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @discussion.title %> <span class="pull-right">Created <%= time_ago(@discussion) %> ago.</</span></div>
+				<div class="panel-body article-custom"><p class="markdown"><%= markdown(@discussion.description) %></p>
+				<% if admin_signed_in? %>
+					<%= link_to edit_button("Programming Basic"), edit_programming_basic_path(@discussion), :class => "btn btn-xs pull-right btn-custom" %>
+					<%= link_to destroy_button("programming Basic"), programming_basic_path(@discussion), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
+				<% end %>
+				</div>
+
+				<%= render 'comments/section' %>
+
 		</div>
-
-		<%= render 'comments/section' %>
-
 	</div>
 </div>
