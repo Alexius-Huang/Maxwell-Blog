@@ -1,14 +1,19 @@
-<% Photo.order('created_at DESC').each.with_index do |photo, index| %>
-	<% if index + 1 > 5 %>
-		<% break %>
-	<% end %>
+<div id="wrapper">
+	<div id="list">
+			
+			<% Photo.order('created_at DESC').each.with_index do |photo, index| %>
+				
+				<div class="item">
+					<%= link_to (image_tag photo.url, style: "max-width: 95%; margin: 0 auto; display: block"), photo_path(photo) %>
 
-	<div class="panel-body">
-		<p> 
-			<span class="glyphicon glyphicon-bookmark"></span> <%= link_to photo.title, photo_path(photo), :class => "custom" %> <br>
-			created at <%= photo.created_at.to_s(:long) %>
-		</p>
-		<%= image_tag photo.url, :style => "max-width: 270px; margin: 0 auto; display: block" %>
+					<p> 
+						<span class="glyphicon glyphicon-bookmark"></span> <%= link_to photo.title, photo_path(photo), :class => "custom" %> <br>
+						created at <%= photo.created_at.to_s(:short) %>
+					</p>
+				</div>
+
+			<% end %>
+
 	</div>
-<% end %>
-<%= link_to view_button("Photos & Artworks"), photos_path, :class => "btn pull-right btn-index" %>
+</div>
+		<%= link_to view_button("Photos & Artworks"), photos_path, :class => "btn pull-right btn-index" %>
