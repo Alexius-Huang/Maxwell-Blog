@@ -1,2 +1,4 @@
-<%= image_tag Admin.first.url, :style => "max-width: 295px; margin: 0 10px 10px 0; float: left;" %>
-<p style="margin-top: 10px;"><%= markdown(author.about) %></p>
+<%= image_tag Admin.first.url, :style => "max-width: 40%; display: block; float:left; margin: 10px; margin-right: 20px" %>
+<div class="markdown">
+	<p><%= markdown(author.about) %></p>
+</div>
