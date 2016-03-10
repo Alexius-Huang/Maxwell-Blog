@@ -11,9 +11,11 @@
 					<p><%= markdown(truncate(article.description, length: 500)) %></p>
 				</div>
 			</div>
+			<hr>
+				<%= link_to html_icon("eye-open") + "Read more", article_path(article), :class => "btn btn-xs pull-right btn-custom" %>
 
 			<% if admin_signed_in? %>
-				<hr>
+				
 				<%= link_to edit_button("Article"), edit_article_path(article), :class => "btn btn-xs pull-right btn-custom" %>
 				<%= link_to destroy_button("Article"), article_path(article), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 			<% end %>

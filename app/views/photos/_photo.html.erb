@@ -1,8 +1,16 @@
-<div class="panel-body" id="parse-photo">
-	<p><%= image_tag photo.url %></p>
-	<p><%= html_icon("paperclip") %> <%= link_to photo.title, photo_path(photo) %>, updated <%= time_ago(photo) %> ago.</p>
-	<div class="markdown">
-		<p><%= markdown(truncate(photo.description, length: 500)) %></p>
-	</div>
-	<%= link_to "Read more", photo_path(photo) %>
+<div class="panel-body item">
+
+
+			<%= image_tag photo.url, :style => "max-width: 95%; display:block; margin: 0 auto" %>
+			<hr>
+			<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("paperclip") %> <%= link_to photo.title, photo_path(photo) %>, updated <%= time_ago(photo) %> ago.</p>
+			<hr>
+				<%= link_to html_icon("eye-open") + "Read more", photo_path(photo), :class => "btn btn-xs pull-right btn-custom" %>
+
+			<% if admin_signed_in? %>
+				<%= link_to edit_button("Photo"), edit_photo_path(photo), :class => "btn btn-xs pull-right btn-custom" %>
+				<%= link_to destroy_button("Photo"), photo_path(photo), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+			<% end %>
+
+
 </div>
