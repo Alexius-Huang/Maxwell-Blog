@@ -1,76 +1,160 @@
 <div class="heading">
 	<%= link_to back_button(nil), root_path, :class => "btn btn-custom btn-md pull-right" %>
-</div>
-
-<div style="margin-bottom: 10px"></div>
-
-<div class="row" style="margin-left: 40px">
-
-	<div class="col-md-offset-1 col-md-6">
-		<div class="panel-heading panel-top-offset" id="programming-icon"><%= image_tag("programming-icon.png") %> Programming Experiences</div>
-		<div class="panel-body"><%= markdown(%Q{
-### Sharing Experiences is Another Good Practice
-I started learning programming only about a year ago which I found interestng in it. There are a lot of things to share, and teaching others can help myself to know what I am learning. 
-
-Recently I programmed with **Ruby on Rails**, since then I am very obsessed with Ruby Language, curious about how it worked, but leave it as a mystery as if there were magic inside the Ruby program, ha ha ~~. And I also planned try to write some article or tutorials about some programming that I learned in order to record how I worked on coding! Please enjoy! }) %><br> <%= link_to view_button("Programming Experiences"), programming_experiences_path, :class => "btn pull-right btn-index" %></div>
-	</div>
-</div>
-
-<div class="row" style="margin-left: 40px">
-
-	<div class="col-md-offset-1 col-md-6">
-		<div class="panel-heading panel-top-offset" id="programming-icon"><%= image_tag("programming-icon.png") %> Programming Basics</div>
-		<div class="panel-body"><%= markdown(%Q{
-### Coding Beginners, Hello!
-Welcome to explore the world of the **computer science**! Learning programming is fun and coding is also a good way to solve many problems. The author may think that it is important to let people know the joy and the charm of programming.
-
-This section will introduce **the fundamentals of programming** and several concept about programming. }) %><br> <%= link_to view_button("Programming Basics"), programming_basics_path, :class => "btn pull-right btn-index" %></div>
-	</div>
-</div>
-
-<div class="row" style="margin-left: 40px">
-
-	<div class="col-md-offset-1 col-md-6">
-		<div class="panel-heading panel-top-offset" id="ruby-icon"><%= image_tag("ruby-icon.png") %> Ruby Language</div>
-		<div class="panel-body"><%= markdown(%Q{
-### Interested in **Ruby**?
-**[Ruby](https://www.ruby-lang.org/en/)** is created by **Yukihiro Matsumoto** in about year 1995. According to its creator, Ruby was influenced by **Perl**, **Smalltalk**, **Eiffel**, **Ada**, and **Lisp**. It supports multiple programming paradigms, including functional, object-oriented, and imperative. It also has a dynamic type system and automatic memory management.
-
-The author of this blog will share and record the experience in Ruby Language programming in this section. }) %><br> <%= link_to view_button("Ruby Programming"), ruby_discussions_path, :class => "btn pull-right btn-index" %></div>
-	</div>
+	<% if admin_signed_in? %>
+		<%= link_to new_button("Ruby Gem Discussion"), new_ruby_gem_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
+		<%= link_to new_button("Rails Discussion"), new_rails_discussion_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
+		<%= link_to new_button("Ruby Lang Discussion"), new_ruby_discussion_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
+		<%= link_to new_button("Programming Basic"), new_programming_basic_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
+		<%= link_to new_button("Programming Experience"), new_programming_experience_path, :class => "btn btn-offset btn-custom btn-md pull-right" %>
+	<% end %>
 
 </div>
 
-<div class="row" style="margin-left: 40px">
-	
-	<div class="col-md-offset-1 col-md-6">
-		<div class="panel-heading panel-top-offset" id="rails-icon"><%= image_tag("rails-icon.png") %> Ruby on Rails</div>
-		<div class="panel-body"><%= markdown(%Q{
-### Welcome Abroad! 
-#### **You are riding [Ruby on Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails)!**
+<div class="small-gap"></div>
 
-Since about ten years ago, **David Heinemeier Hansson** created this marvelous web framework which follows the rule of **Model-View-Controller**(**[MVC](https://en.wikipedia.org/wiki/Model–view–controller)**). 
+<div class="row" style="clear:both">
 
-It encourages and facilitates the use of web standards such as **JSON** or **XML** for data transfer, and **HTML**, **CSS** and **JavaScript** for display and user interfacing. 
+	<div class="col-md-2">
+		<div class="side-list">
 
-In addition to MVC, Rails emphasizes the use of other well-known software engineering patterns and paradigms, including **convention over configuration (CoC)**, **don't repeat yourself (DRY)**, and the **active record pattern**.
+			<div class="panel-heading panel-top-offset" id="link-btn-1"><a href="#" id="ajax-btn-1">Programming Experiences</a></div>
+			<div id="CS-1">
+				<% @programming_experiences.each do |discussion| %>
+					<div class="panel-body"><%= link_to discussion.title,programming_experience_path(discussion) %></div>
+				<% end %>
+			</div>
 
-This section will basically share some knowlegde and the authors experience on coding with Ruby on Rails }) %><br> <%= link_to view_button("Rails Discussion"), rails_discussions_path, :class => "btn pull-right btn-index" %></div>
+			<div class="panel-heading panel-top-offset" id="link-btn-2" style="border-radius: 0"><a href="#" id="ajax-btn-2">Programming Basics</a></div>
+			<div id="CS-2">
+				<% @programming_basics.each do |discussion| %>
+				<div class="panel-body"><%= link_to discussion.title, programming_basic_path(discussion) %></div>
+				<% end %>
+			</div>
+
+			<div class="panel-heading panel-top-offset" id="link-btn-3" style="border-radius: 0"><a href="#" id="ajax-btn-3">Ruby Language</a></div>
+			<div id="CS-3">
+				<% @ruby_discussions.each do |discussion| %>
+				<div class="panel-body"><%= link_to discussion.title, ruby_discussion_path(discussion) %></div>
+				<% end %>
+			</div>
+			
+			<div class="panel-heading panel-top-offset" id="link-btn-4" style="border-radius: 0"><a href="#" id="ajax-btn-4">Ruby on Rails</a></div>
+			<div id="CS-4">
+				<% @rails_discussions.each do |discussion| %>
+				<div class="panel-body"><%= link_to discussion.title, rails_discussion_path(discussion) %></div>
+				<% end %>
+			</div>
+			
+			<div class="panel-heading panel-top-offset" id="link-btn-5" style="border-radius: 0"><a href="#" id="ajax-btn-5">Ruby Gems</a></div>
+			<div id="CS-5">
+				<% @ruby_gems.each do |discussion| %>
+				<div class="panel-body"><%= link_to discussion.title, ruby_gem_path(discussion) %></div>
+				<% end %>
+			</div>
+
+		</div>
 	</div>
 
-</div>
+	<div class="col-md-10">
+		<div class="panel-heading panel-top-offset"><%= html_icon("paperclip") %> Maxwell's Photos &amp Artworks </div>
+		<div style="margin-top: 10px"></div>
+		<div id="discussions">
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+			<div id="wrapper">
+				<div id="list">
+					<div class="panel-body item">
+					<% @programming_experiences.each do |discussion| %>
+						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
+						<hr>
+						<div class="markdown">
+							<div class="index-format">
+								<p><%= markdown(truncate(discussion.description, length: 500)) %></p>
+							</div>
+						</div>
+						<hr>
+						<%= link_to html_icon("eye-open") + "Read more", programming_experience_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+						<% if admin_signed_in? %>
+							<%= link_to edit_button("Discussion"), edit_programming_experience_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+							<%= link_to destroy_button("Discussion"), edit_programming_experience_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+						<% end %>
+					<% end %>
+				</div>
 
-<div class="row" style="margin-left: 40px">
+				<div class="panel-body item">
+					<% @programming_basics.each do |discussion| %>
+						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
+						<hr>
+						<div class="markdown">
+							<div class="index-format">
+								<p><%= markdown(truncate(discussion.description, length: 500)) %></p>
+							</div>
+						</div>
+						<hr>
+						<%= link_to html_icon("eye-open") + "Read more", programming_basic_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+						<% if admin_signed_in? %>
+							<%= link_to edit_button("Discussion"), edit_programming_basic_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+							<%= link_to destroy_button("Discussion"), edit_programming_basic_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+						<% end %>
+					<% end %>
+				</div>
 
-	<div class="col-md-offset-1 col-md-6">
-		<div class="panel-heading panel-top-offset" id="gem-icon"><%= image_tag("gem-icon.ico") %> Useful Ruby Gems</div>
-		<div class="panel-body"><%= markdown(%Q{
-### Advance Ruby with **Gems**
+				<div class="panel-body item">
+					<% @ruby_discussions.each do |discussion| %>
+						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
+						<hr>
+						<div class="markdown">
+							<div class="index-format">
+								<p><%= markdown(truncate(discussion.description, length: 500)) %></p>
+							</div>
+						</div>
+						<hr>
+						<%= link_to html_icon("eye-open") + "Read more", ruby_discussion_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+						<% if admin_signed_in? %>
+							<%= link_to edit_button("Discussion"), edit_ruby_discussion_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+							<%= link_to destroy_button("Discussion"), edit_ruby_discussion_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+						<% end %>
+					<% end %>
+				</div>
 
-**[RubyGems](https://en.wikipedia.org/wiki/RubyGems)** are the **packages** or **libraries** of the Ruby Language, there are so many interesting Ruby Gems to explore. Gems are good helpers that can assist you in Ruby programming.
+				<div class="panel-body item">
+					<% @rails_discussions.each do |discussion| %>
+						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
+						<hr>
+						<div class="markdown">
+							<div class="index-format">
+								<p><%= markdown(truncate(discussion.description, length: 500)) %></p>
+							</div>
+						</div>
+						<hr>
+						<%= link_to html_icon("eye-open") + "Read more", rails_discussion_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+						<% if admin_signed_in? %>
+							<%= link_to edit_button("Discussion"), edit_rails_discussion_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+							<%= link_to destroy_button("Discussion"), edit_rails_discussion_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+						<% end %>
+					<% end %>
+				</div>
 
-Even in Rails, there are useful Gems that will also be introduced in this section.
-}) %><br> <%= link_to view_button("Ruby Gems"), ruby_gems_path, :class => "btn pull-right btn-index" %></div>
+				<div class="panel-body item">
+					<% @ruby_gems.each do |discussion| %>
+						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
+						<hr>
+						<div class="markdown">
+							<div class="index-format">
+								<p><%= markdown(truncate(discussion.description, length: 500)) %></p>
+							</div>
+						</div>
+						<hr>
+						<%= link_to html_icon("eye-open") + "Read more", ruby_gem_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+						<% if admin_signed_in? %>
+							<%= link_to edit_button("Discussion"), edit_ruby_gem_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
+							<%= link_to destroy_button("Discussion"), edit_ruby_gem_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
+						<% end %>
+					<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </div>
+
