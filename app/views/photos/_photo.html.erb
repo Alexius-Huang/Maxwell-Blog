@@ -1,6 +1,5 @@
 <div class="panel-body item">
 
-
 			<%= image_tag photo.url, :style => "max-width: 95%; display:block; margin: 0 auto" %>
 			<hr>
 			<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("paperclip") %> <%= link_to photo.title, photo_path(photo) %>, updated <%= time_ago(photo) %> ago.</p>
@@ -11,6 +10,5 @@
 				<%= link_to edit_button("Photo"), edit_photo_path(photo), :class => "btn btn-xs pull-right btn-custom" %>
 				<%= link_to destroy_button("Photo"), photo_path(photo), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 			<% end %>
-
 
 </div>
