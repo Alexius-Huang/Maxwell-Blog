@@ -7,13 +7,23 @@
 
 <div class="small-gap"></div>
 
-<div class="col-md-offset-1 col-md-6" >
-	<div class="row">
-	<div class="col-md-offset-1 col-md-11">
-		<div class="panel-heading panel-top-offset"><%= html_icon("file") %> Maxwell's Life Experience </div>
-		<div class="panel-scrolling-huge" id="articles">
-			<%= render @articles %>
+<div class="row" style="clear:both">
+	<div class="col-md-2">
+		<div class="side-list">
+			<div class="panel-heading panel-top-offset">Lists of Articles</div>
+			<% Article.order("created_at DESC").each do |article| %>
+				<div class="panel-body"><%= link_to article.title, article_path(article) %></div>
+			<% end %>
 		</div>
 	</div>
+
+	<div class="col-md-10">
+		<div class="panel-heading panel-top-offset"><%= html_icon("file") %> Maxwell's Life Experience </div>
+		<div style="margin-top: 10px"></div>
+		<div id="articles">
+			<div id="wrapper">
+				<div id="list"><%= render @articles %></div>
+			</div>
+		</div>
 	</div>
 </div>
