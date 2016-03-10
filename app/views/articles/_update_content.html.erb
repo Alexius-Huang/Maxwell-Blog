@@ -1,13 +1,32 @@
-<% Article.order('created_at DESC').each.with_index do |article, index| %>
-	<% if index + 1 > 5 %>
-		<% break %>
-	<% end %>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
-	<div class="panel-body">
-		<p> 
-			<span class="glyphicon glyphicon-hand-right"></span> <%= link_to article.title, article_path(article), :class => "custom" %> <br>
-			created at <%= article.created_at.to_s(:long) %>
-		</p>
+<div id="wrapper">
+	<div id="list" style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2;">
+		
+		<% Article.order('created_at DESC').each.with_index do |article, index| %>
+
+			<div class="item">
+				<%= link_to (image_tag article.image_url, :style => "max-width: 95%; margin: 0 auto; display: block" ), article_path(article) %>
+				<hr>
+				
+				<p style="max-width: 90%; display: block; margin: 0 auto;"> 
+					<%= html_icon "hand-right" %> <%= link_to article.title, article_path(article), :class => "custom" %> <br>
+						created at <%= article.created_at.to_s(:short) %>
+				</p>
+		
+			<!-- 				
+				<div class="markdown">
+					<div class="index-format">
+						<p><%= markdown(truncate(article.description, length: 500)) %></p>
+					</div>
+				</div>
+				<hr>
+			-->
+
+			</div>
+
+		<% end %>
+
 	</div>
-<% end %>
+</div>
 <%= link_to view_button("Articles"), articles_path, :class => "btn pull-right btn-index" %>
