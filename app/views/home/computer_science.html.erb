@@ -60,10 +60,10 @@
 		<div class="panel-heading panel-top-offset"><%= html_icon("paperclip") %> Maxwell's Photos &amp Artworks </div>
 		<div style="margin-top: 10px"></div>
 		<div id="discussions">
-		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
 			<div id="wrapper">
 				<div id="list">
-
+					<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 					<% @programming_experiences.each do |discussion| %>
 						<div class="item panel-body">
 						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
