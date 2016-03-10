@@ -51,6 +51,12 @@ $transparent: rgba(0,0,0,0);
 }
 
 body {
+
+	hr {
+		border-color: $dark-alpha-light;
+		margin: 10px;
+
+	}
 	
 	background-image: url(<%= asset_path 'background.png' %>);
 	background-repeat: no-repeat;
@@ -339,9 +345,17 @@ body {
 	div.markdown, {
 		img {
 			display: block;
-			max-width: 100%;
+			max-width: 90%;
 			min-width: 50%;
 			margin: 0 auto;
+		}
+		.index-format {
+			p, h1, h2, h3, h4, h5, h6, img, pre, code {
+				display: block;
+				max-width: 90%;
+				margin: 0 auto;
+				padding: 5px;
+			}
 		}
 	}
 
