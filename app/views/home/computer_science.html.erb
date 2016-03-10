@@ -55,6 +55,7 @@
 		</div>
 	</div>
 
+
 	<div class="col-md-10">
 		<div class="panel-heading panel-top-offset"><%= html_icon("paperclip") %> Maxwell's Photos &amp Artworks </div>
 		<div style="margin-top: 10px"></div>
@@ -62,8 +63,9 @@
 		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 			<div id="wrapper">
 				<div id="list">
-					<div class="panel-body item">
+
 					<% @programming_experiences.each do |discussion| %>
+						<div class="item panel-body">
 						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
 						<hr>
 						<div class="markdown">
@@ -77,11 +79,11 @@
 							<%= link_to edit_button("Discussion"), edit_programming_experience_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
 							<%= link_to destroy_button("Discussion"), edit_programming_experience_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 						<% end %>
+						</div>
 					<% end %>
-				</div>
 
-				<div class="panel-body item">
 					<% @programming_basics.each do |discussion| %>
+					<div class="item panel-body">
 						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
 						<hr>
 						<div class="markdown">
@@ -95,11 +97,11 @@
 							<%= link_to edit_button("Discussion"), edit_programming_basic_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
 							<%= link_to destroy_button("Discussion"), edit_programming_basic_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 						<% end %>
+						</div>
 					<% end %>
-				</div>
 
-				<div class="panel-body item">
 					<% @ruby_discussions.each do |discussion| %>
+					<div class="item panel-body">
 						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
 						<hr>
 						<div class="markdown">
@@ -113,11 +115,11 @@
 							<%= link_to edit_button("Discussion"), edit_ruby_discussion_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
 							<%= link_to destroy_button("Discussion"), edit_ruby_discussion_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 						<% end %>
+						</div>
 					<% end %>
-				</div>
 
-				<div class="panel-body item">
 					<% @rails_discussions.each do |discussion| %>
+					<div class="item panel-body">
 						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
 						<hr>
 						<div class="markdown">
@@ -131,11 +133,11 @@
 							<%= link_to edit_button("Discussion"), edit_rails_discussion_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
 							<%= link_to destroy_button("Discussion"), edit_rails_discussion_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 						<% end %>
+						</div>
 					<% end %>
-				</div>
 
-				<div class="panel-body item">
 					<% @ruby_gems.each do |discussion| %>
+					<div class="item panel-body">
 						<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("console") %> <%= link_to discussion.title, discussion %>, updated <%= time_ago(discussion) %> ago.</p>
 						<hr>
 						<div class="markdown">
@@ -149,6 +151,7 @@
 							<%= link_to edit_button("Discussion"), edit_ruby_gem_path(discussion), :class => "btn btn-xs pull-right btn-custom" %>
 							<%= link_to destroy_button("Discussion"), edit_ruby_gem_path(discussion), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 						<% end %>
+						</div>
 					<% end %>
 					</div>
 				</div>
