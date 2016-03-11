@@ -1,14 +1,37 @@
 <div class="panel-body item">
 
-			<%= link_to (image_tag photo.url, :style => "max-width: 95%; display:block; margin: 0 auto"), photo_path(photo) %>
+			<a href="#photo-modal-<%= photo.id %>" data-toggle="modal" role="button"><%= image_tag photo.url, :style => "max-width: 95%; display:block; margin: 0 auto" %></a>
 			<hr>
 			<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("paperclip") %> <%= link_to photo.title, photo_path(photo) %>, updated <%= time_ago(photo) %> ago.</p>
-			<hr>
-				<%= link_to html_icon("eye-open") + "Read more", photo_path(photo), :class => "btn btn-xs pull-right btn-custom" %>
 
 			<% if admin_signed_in? %>
+			<hr>
 				<%= link_to edit_button("Photo"), edit_photo_path(photo), :class => "btn btn-xs pull-right btn-custom" %>
 				<%= link_to destroy_button("Photo"), photo_path(photo), method: :delete, :class => "btn btn-xs pull-right btn-offset"  %>
 			<% end %>
+
+
+<!-- Modal -->
+	<div class="modal fade" id="photo-modal-<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="photo-modal-label"><%= photo.title %></h4>
+	      </div>
+	      <div class="modal-body">
+	       	<%= image_tag photo.url %>
+	       	<div style="margin-top: 10px;"></div>
+					<p class="markdown"><%= markdown(photo.description) %></p>
+	      </div>
+				<div class="modal-footer">
+				<% if admin_signed_in? %>
+					<%= link_to edit_button("Photo or Artwork") ,edit_photo_path(photo), :class => "btn btn-xs pull-right btn-offset btn-custom" %>
+					<%= link_to destroy_button("Photo or Artwork"), photo_path(photo), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
+				<% end %>
+				</div>
+	    </div>
+	  </div>
+	</div>
 
 </div>

@@ -11,7 +11,6 @@
 			<div class="small-gap"></div>
 			<%= image_tag @photo.url %>
 				<p class="markdown"><%= markdown(@photo.description) %></p>
-			</%>
 			<% if admin_signed_in? %>
 				<%= link_to edit_button("Photo or Artwork") ,edit_photo_path(@photo), :class => "btn btn-xs pull-right btn-custom" %>
 				<%= link_to destroy_button("Photo or Artwork"), photo_path(@photo), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
