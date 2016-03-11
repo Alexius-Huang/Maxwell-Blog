@@ -12,7 +12,7 @@ class RailsDiscussionsController < ApplicationController
 		@discussion = RailsDiscussion.create(discussion_params)
 
 		if @discussion.save
-			redirect_to rails_discussions_path
+			redirect_to computer_science_path
 		else
 			render :new
 		end
@@ -33,7 +33,7 @@ class RailsDiscussionsController < ApplicationController
 		@discussion = RailsDiscussion.find(params[:id])
 
 		if @discussion.update(discussion_params)
-			redirect_to rails_discussion_path(@discussion)
+			redirect_to computer_science_path
 		else
 			render :edit
 		end
@@ -42,7 +42,7 @@ class RailsDiscussionsController < ApplicationController
 	def destroy
 		@discussion = RailsDiscussion.find(params[:id])
 		@discussion.destroy
-		redirect_to rails_discussions_path
+		redirect_to computer_science_path
 	end
 
 	private

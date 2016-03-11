@@ -12,7 +12,7 @@ class ProgrammingBasicsController < ApplicationController
 		@discussion = ProgrammingBasic.create(discussion_params)
 
 		if @discussion.save
-			redirect_to programming_basics_path
+			redirect_to computer_science_path
 		else
 			render :new
 		end
@@ -33,7 +33,7 @@ class ProgrammingBasicsController < ApplicationController
 		@discussion = ProgrammingBasic.find(params[:id])
 
 		if @discussion.update(discussion_params)
-			redirect_to programming_basic_path(@discussion)
+			redirect_to computer_science_path
 		else
 			render :edit
 		end
@@ -42,7 +42,7 @@ class ProgrammingBasicsController < ApplicationController
 	def destroy
 		@discussion = ProgrammingBasic.find(params[:id])
 		@discussion.destroy
-		redirect_to programming_basics_path
+		redirect_to computer_science_path
 	end
 
 	private

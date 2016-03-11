@@ -12,7 +12,7 @@ class RubyGemsController < ApplicationController
 		@discussion = RubyGem.create(discussion_params)
 
 		if @discussion.save
-			redirect_to ruby_gems_path
+			redirect_to computer_science_path
 		else
 			render :new
 		end
@@ -33,7 +33,7 @@ class RubyGemsController < ApplicationController
 		@discussion = RubyGem.find(params[:id])
 
 		if @discussion.update(discussion_params)
-			redirect_to ruby_gem_path(@discussion)
+			redirect_to computer_science_path
 		else
 			render :edit
 		end
@@ -42,7 +42,7 @@ class RubyGemsController < ApplicationController
 	def destroy
 		@discussion = RubyGem.find(params[:id])
 		@discussion.destroy
-		redirect_to ruby_gems_path
+		redirect_to computer_science_path
 	end
 
 	private

@@ -11,7 +11,7 @@ class ProgrammingExperiencesController < ApplicationController
 		@discussion = ProgrammingExperience.create(discussion_params)
 
 		if @discussion.save
-			redirect_to programming_experiences_path
+			redirect_to computer_science_path
 		else
 			render :new
 		end
@@ -32,7 +32,7 @@ class ProgrammingExperiencesController < ApplicationController
 		@discussion = ProgrammingExperience.find(params[:id])
 
 		if @discussion.update(discussion_params)
-			redirect_to programming_experience_path(@discussion)
+			redirect_to computer_science_path
 		else
 			render :edit
 		end
@@ -41,7 +41,7 @@ class ProgrammingExperiencesController < ApplicationController
 	def destroy
 		@discussion = ProgrammingExperience.find(params[:id])
 		@discussion.destroy
-		redirect_to programming_experiences_path
+		redirect_to computer_science_path
 	end
 
 	private
