@@ -2,15 +2,38 @@
 	<div id="list">
 			
 			<% Photo.order('created_at DESC').each.with_index do |photo, index| %>
-				
+				<% break if index + 1 > 10 %>
 				<div class="item">
-					<%= link_to (image_tag photo.url, style: "max-width: 95%; margin: 0 auto; display: block"), photo_path(photo) %>
+					<a href="/photo#photo-modal-<%= photo.id %>" data-toggle="modal" role="button"><%= image_tag photo.url, :style => "max-width: 95%; display:block; margin: 0 auto" %></a>
 
 					<p> 
-						<%= html_icon("bookmark") %> <%= link_to photo.title, photo_path(photo), :class => "custom" %> <br>
+						<a href="/photo#photo-modal-<%= photo.id %>" data-toggle="modal" role="button" class="custom"> <%= html_icon("bookmark") %> <%= photo.title %> </a>
 						created at <%= photo.created_at.to_s(:short) %>
 					</p>
 				</div>
+
+				<!-- Modal -->
+					<div class="modal fade" id="photo-modal-<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="photo-modal-label"><%= photo.title %></h4>
+					      </div>
+					      <div class="modal-body">
+					       	<%= image_tag photo.url %>
+					       	<div style="margin-top: 10px;"></div>
+									<p class="markdown"><%= markdown(photo.description) %></p>
+					      </div>
+								<div class="modal-footer">
+								<% if admin_signed_in? %>
+									<%= link_to edit_button("Photo or Artwork") ,edit_photo_path(photo), :class => "btn btn-xs pull-right btn-offset btn-custom" %>
+									<%= link_to destroy_button("Photo or Artwork"), photo_path(photo), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
+								<% end %>
+								</div>
+					    </div>
+					  </div>
+					</div>
 
 			<% end %>
 
