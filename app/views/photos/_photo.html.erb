@@ -2,7 +2,7 @@
 
 			<a href="#photo-modal-<%= photo.id %>" data-toggle="modal" role="button"><%= image_tag photo.url, :style => "max-width: 95%; display:block; margin: 0 auto" %></a>
 			<hr>
-			<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("paperclip") %> <%= link_to photo.title, photo_path(photo) %>, updated <%= time_ago(photo) %> ago.</p>
+			<p style="display: block; margin: 0 auto; max-width: 90%; "><%= html_icon("paperclip") %> <a href="/photo#photo-modal-<%= photo.id %>" data-toggle="modal" role="button" class="custom"> <%= photo.title %> </a>, updated <%= time_ago(photo) %> ago.</p>
 
 			<% if admin_signed_in? %>
 			<hr>

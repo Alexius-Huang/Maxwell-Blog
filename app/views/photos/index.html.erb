@@ -13,7 +13,9 @@
 		<div class="side-list">
 			<div class="panel-heading panel-top-offset">Lists of Photos &amp Artworks</div>
 			<% Photo.order("updated_at DESC").each do |photo| %>
-				<div class="panel-body"><%= link_to photo.title, photo_path(photo) %></div>
+				<div class="panel-body">
+					<a href="/photo#photo-modal-<%= photo.id %>" data-toggle="modal" role="button" class="custom"> <%= html_icon("bookmark") %> <%= photo.title %> </a>
+				</div>
 			<% end %>
 		</div>
 	</div>
