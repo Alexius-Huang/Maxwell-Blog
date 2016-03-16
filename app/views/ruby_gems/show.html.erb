@@ -9,8 +9,8 @@
 <div class="col-md-offset-1 col-md-6" >
 	<div class="row">
 	<div class="col-md-offset-1 col-md-11">
-		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @discussion.title %> <span class="pull-right">Created <%= time_ago(@discussion) %> ago.</</span></div>
-		<div class="panel-body article-custom"><p class="markdown"><%= markdown(@discussion.description) %></p>
+		<div class="panel-heading panel-top-offset"><%= html_icon("tag") %> <%= @discussion.title %> <span class="pull-right">Created <%= time_ago(@discussion) %> ago.</span></div>
+		<div class="panel-body article-custom markdown"><p><%= markdown(@discussion.description) %></p>
 		<% if admin_signed_in? %>
 			<%= link_to edit_button("Ruby Gem Discussion"), edit_ruby_gem_path(@discussion), :class => "btn btn-xs pull-right btn-custom" %>
 			<%= link_to destroy_button("Ruby Gem Discussion"), ruby_gem_path(@discussion), method: :delete, :class => "btn btn-custom btn-xs pull-right btn-offset", data: { confirm: "Are you sure?" } %>
